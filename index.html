@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div
+      class="flex flex-col sm:flex-row w-full justify-center my-28 gap-10 p-10"
+    >
+      <form
+        id="formTask"
+        class="flex flex-col basis-1/2 gap-4 bg-slate-500 rounded p-4 h-[300px]"
+      >
+        <label class="text-white">Titulo</label>
+        <input
+          type="text"
+          name="title"
+          class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+          placeholder="titulo"
+        />
+        <label class="text-white">Descripción</label>
+        <textarea
+          name="description"
+          class="block px-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+          placeholder="Descripción"
+        ></textarea>
+        <button class="btn-primary" type="submit">Ingresar</button>
+      </form>
+      <div class="flex flex-col bg-slate-500 rounded w-full">
+        <h2 class="text-white text-center"><strong>Lista de Tareas</strong></h2>
+        <div
+          id="listTasks"
+          class="relative px-2 h-[400px] overflow-y-auto sm:px-10"
+        ></div>
+      </div>
+    </div>
+
+    <template id="task-template">
+      <div
+        class="task-card flex justify-between bg-slate-400 hover:bg-slate-300 w-full mb-4 border-solid border-blue-950 border-2 rounded"
+      >
+        <div class="task-details m-0 sm:m-4">
+          <div><b>Title:</b> <span class="task-title"></span></div>
+          <div><b>Description:</b> <span class="task-description"></span></div>
+        </div>
+        <button
+          class="delete-btn rounded-r bg-red-600 p-2 hover:bg-red-500 text-white"
+        >
+          Eliminar
+        </button>
+      </div>
+    </template>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
